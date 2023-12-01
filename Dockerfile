@@ -41,6 +41,7 @@ COPY . /pymarl
 RUN ls /pymarl
 # Install your project
 RUN python3 setup.py install
+RUN pip3 install pysc2 protobuf==3.19.5
 
 RUN python3 -c "import torch; print(torch.__file__)"
 # Modify the PyTorch _six.py file
