@@ -37,7 +37,7 @@ RUN pip3 install --upgrade pip
 WORKDIR /pymarl
 
 # Copy the contents of your project into the container
-COPY docker /pymarl
+COPY . /pymarl
 
 # Install your project
 RUN python3 setup.py install
