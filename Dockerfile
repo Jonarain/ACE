@@ -42,8 +42,8 @@ RUN ls /pymarl
 # Install your project
 RUN python3 setup.py install
 # Modify the PyTorch _six.py file
-RUN echo 'import collections.abc as container_abcs' >> /opt/conda/lib/python3.8/site-packages/torch/_six.py \
- && echo 'int_classes = int' >> /opt/conda/lib/python3.8/site-packages/torch/_six.py
+RUN echo 'import collections.abc as container_abcs' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py \
+ && echo 'int_classes = int' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py
 
 ### -- SMAC
 ENV SC2PATH /pymarl/3rdparty/StarCraftII
