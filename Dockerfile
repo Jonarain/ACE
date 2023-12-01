@@ -40,6 +40,7 @@ WORKDIR /pymarl
 COPY . /pymarl
 RUN ls /pymarl
 # Install your project
+RUN pip3 install torch==1.9.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
 RUN python3 setup.py install
 RUN pip3 install pysc2 protobuf==3.19.5
 
