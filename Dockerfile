@@ -38,10 +38,9 @@ WORKDIR /pymarl
 
 # Copy the contents of your project into the container
 COPY . /pymarl
-
+RUN ls /pymarl
 # Install your project
 RUN python3 setup.py install
-
 # Modify the PyTorch _six.py file
 RUN echo 'import collections.abc as container_abcs' >> /opt/conda/lib/python3.8/site-packages/torch/_six.py \
  && echo 'int_classes = int' >> /opt/conda/lib/python3.8/site-packages/torch/_six.py
