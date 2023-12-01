@@ -46,8 +46,8 @@ RUN pip3 install pysc2 protobuf==3.19.5
 
 RUN python3 -c "import torch; print(torch.__file__)"
 # Modify the PyTorch _six.py file
-RUN echo 'import collections.abc as container_abcs' >> /usr/local/lib/python3.8/dist-packages/torch-1.9.0-py3.8-linux-x86_64.egg/torch/_six.py \
- && echo 'int_classes = int' >> /usr/local/lib/python3.8/dist-packages/torch-1.9.0-py3.8-linux-x86_64.egg/torch/_six.py
+RUN echo 'import collections.abc as container_abcs' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py \
+ && echo 'int_classes = int' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py
 
 ### -- SMAC
 ENV SC2PATH /pymarl/3rdparty/StarCraftII
