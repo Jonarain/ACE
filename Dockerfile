@@ -41,6 +41,8 @@ COPY . /pymarl
 RUN ls /pymarl
 # Install your project
 RUN python3 setup.py install
+
+RUN python3 -c "import torch; print(torch.__file__)"
 # Modify the PyTorch _six.py file
 RUN echo 'import collections.abc as container_abcs' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py \
  && echo 'int_classes = int' >> /usr/local/lib/python3.8/dist-packages/torch/_six.py
