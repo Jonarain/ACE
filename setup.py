@@ -70,7 +70,7 @@ setup(
         'namedlist',
         'opencv-python',  # pypy incompatible
         'enum_tools',
-        'scipy',
+        'scipy==1.10.1',
         'trueskill',
         'h5py',
     ],
