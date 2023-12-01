@@ -3,8 +3,8 @@ from ding.entry import serial_pipeline
 from easydict import EasyDict
 
 agent_num = 2
-collector_env_num = 2 #8
-evaluator_env_num = 2 #8
+collector_env_num = 1 #8
+evaluator_env_num = 1 #8
 
 main_config = dict(
     env=dict(
