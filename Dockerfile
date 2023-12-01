@@ -20,7 +20,7 @@ RUN apt-get update -y && apt-get install software-properties-common -y && \
 
 # Install curl and other dependencies
 RUN apt-get update -y && apt-get install -y curl libssl-dev openssl libopenblas-dev \
-    libhdf5-dev hdf5-helpers hdf5-tools libhdf5-serial-dev libprotobuf-dev protobuf-compiler git
+    libhdf5-dev hdf5-helpers hdf5-tools libhdf5-serial-dev libprotobuf-dev protobuf-compiler git libgl1-mesa-glx
 
 
 # Install python3 pip3
