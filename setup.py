@@ -51,7 +51,6 @@ setup(
         'six',
         'gym==0.20.0',  # pypy incompatible
         'torch==1.9.0+cu111',  # PyTorch 1.9.0 is available, if some errors, you need to do something like https://github.com/opendilab/DI-engine/discussions/81
-        'torchvision==0.10.0+cu111',
         'pyyaml',
         'easydict==1.9',
         'tensorboardX>=2.1,<=2.2',
