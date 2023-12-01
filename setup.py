@@ -44,16 +44,18 @@ setup(
                   for package_name in find_packages(include=('ding.*'))},
     python_requires=">=3.6",
     install_requires=[
-        'numpy>=1.10',
+        #'numpy>=1.10',
+        'numpy==1.19.5',
         'requests>=2.25.1',
         'six',
         'gym==0.20.0',  # pypy incompatible
-        'torch>=1.3.1,<=1.9.0',  # PyTorch 1.9.0 is available, if some errors, you need to do something like https://github.com/opendilab/DI-engine/discussions/81
+        'torch==1.9.0',  # PyTorch 1.9.0 is available, if some errors, you need to do something like https://github.com/opendilab/DI-engine/discussions/81
         'pyyaml',
         'easydict==1.9',
         'tensorboardX>=2.1,<=2.2',
-        'matplotlib',  # pypy incompatible
-        'seaborn',
+        'matplotlib==3.5.1',  # pypy incompatible
+        'seaborn==0.11.2',
+        'pandas==1.3.5',
         'yapf==0.29.0',
         'responses~=0.12.1',
         'flask~=1.1.2',
