@@ -3,8 +3,8 @@ from ding.entry import serial_pipeline
 from easydict import EasyDict
 
 agent_num = 2
-collector_env_num = 1 #8
-evaluator_env_num = 1 #8
+collector_env_num = 8 #8
+evaluator_env_num = 8 #8
 
 main_config = dict(
     env=dict(
@@ -33,7 +33,7 @@ main_config = dict(
         learn=dict(
             multi_gpu=False,
             update_per_collect=50,
-            batch_size=320,
+            batch_size=32, #320
             learning_rate=0.0003,
             clip_value=50,
             double_q=False,
