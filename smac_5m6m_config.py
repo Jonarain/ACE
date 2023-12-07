@@ -1,12 +1,8 @@
 from copy import deepcopy
 import os
-import ding
-print(ding.__file__)
 from ding.entry import serial_pipeline
 # ding dir: /usr/local/lib/python3.8/dist-packages/DI_engine-0.2.0-py3.8.egg/ding/__init__.py
 from easydict import EasyDict
-
-assert False
 
 
 agent_num = 5
