@@ -36,6 +36,7 @@ def serial_pipeline(
     Returns:
         - policy (:obj:`Policy`): Converged policy.
     """
+    assert False, f"XXXXXXXXXXXXXXXXXXXXXXXXXXX{max_iterations}"
     if isinstance(input_cfg, str):
         cfg, create_cfg = read_config(input_cfg)
     else:
@@ -57,9 +58,6 @@ def serial_pipeline(
     policy = create_policy(cfg.policy, model=model, enable_field=['learn', 'collect', 'eval', 'command'])
 
     # Create worker components: learner, collector, evaluator, replay buffer, commander.
-    with open('./example.txt', 'w') as file:
-        file.write('Hello, world!')
-
     tb_logger = SummaryWriter(os.path.join('./{}/log/'.format(cfg.exp_name), 'serial'))
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
     collector = create_serial_collector(
