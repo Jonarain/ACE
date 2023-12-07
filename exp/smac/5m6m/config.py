@@ -1,4 +1,5 @@
 from copy import deepcopy
+import ding
 from ding.entry import serial_pipeline
 from easydict import EasyDict
 
@@ -102,6 +103,8 @@ def train(args):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
+    print(ding.__file__)
+    assert False
     parser.add_argument('--seed', '-s', type=int, default=0)
     args = parser.parse_args()
 

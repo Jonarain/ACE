@@ -41,7 +41,6 @@ def serial_pipeline(
     else:
         cfg, create_cfg = input_cfg
 
-    assert False,"111111111111111111111111111111111"
     create_cfg.policy.type = create_cfg.policy.type + '_command'
     env_fn = None if env_setting is None else env_setting[0]
     cfg = compile_config(cfg, seed=seed, env=env_fn, auto=True, create_cfg=create_cfg, save_cfg=True)
@@ -58,8 +57,7 @@ def serial_pipeline(
     policy = create_policy(cfg.policy, model=model, enable_field=['learn', 'collect', 'eval', 'command'])
 
     # Create worker components: learner, collector, evaluator, replay buffer, commander.
-    print(os.path.join('./{}/log/'.format(cfg.exp_name), 'serial'))
-    assert False
+
     tb_logger = SummaryWriter(os.path.join('./{}/log/'.format(cfg.exp_name), 'serial'))
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
     collector = create_serial_collector(
