@@ -1,16 +1,10 @@
 from copy import deepcopy
 import os
+import ding
+print(ding.__file__)
 from ding.entry import serial_pipeline
 # ding dir: /usr/local/lib/python3.8/dist-packages/DI_engine-0.2.0-py3.8.egg/ding/__init__.py
 from easydict import EasyDict
-
-current_file_path = __file__
-
-# Get the directory containing the current file
-current_directory = os.path.dirname(current_file_path)
-
-print("Current file path:", current_file_path)
-print("Current directory:", current_directory)
 
 assert False
 
