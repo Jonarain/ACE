@@ -36,7 +36,6 @@ def serial_pipeline(
     Returns:
         - policy (:obj:`Policy`): Converged policy.
     """
-    assert False, f"XXXXXXXXXXXXXXXXXXXXXXXXXXX{max_iterations}"
     if isinstance(input_cfg, str):
         cfg, create_cfg = read_config(input_cfg)
     else:
@@ -95,7 +94,8 @@ def serial_pipeline(
         collector.reset_policy(policy.collect_mode)
     for _ in range(max_iterations):
         collect_kwargs = commander.step()
-        if collector.envstep>10000000:
+        # max steps
+        if collector.envstep>2000000: #10000000
             import sys
             sys.exit(0)
         # Evaluate policy performance
