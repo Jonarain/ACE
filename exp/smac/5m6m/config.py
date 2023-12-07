@@ -12,6 +12,8 @@ current_directory = os.path.dirname(current_file_path)
 print("Current file path:", current_file_path)
 print("Current directory:", current_directory)
 
+assert False
+
 
 agent_num = 5
 collector_env_num = 1
