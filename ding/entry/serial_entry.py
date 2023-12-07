@@ -40,7 +40,8 @@ def serial_pipeline(
         cfg, create_cfg = read_config(input_cfg)
     else:
         cfg, create_cfg = input_cfg
-    print("1111111111111111111111111111111111111")
+
+    assert False,"111111111111111111111111111111111"
     create_cfg.policy.type = create_cfg.policy.type + '_command'
     env_fn = None if env_setting is None else env_setting[0]
     cfg = compile_config(cfg, seed=seed, env=env_fn, auto=True, create_cfg=create_cfg, save_cfg=True)
