@@ -1,7 +1,17 @@
 from copy import deepcopy
-import ding
+import os
 from ding.entry import serial_pipeline
+# ding dir: /usr/local/lib/python3.8/dist-packages/DI_engine-0.2.0-py3.8.egg/ding/__init__.py
 from easydict import EasyDict
+
+current_file_path = __file__
+
+# Get the directory containing the current file
+current_directory = os.path.dirname(current_file_path)
+
+print("Current file path:", current_file_path)
+print("Current directory:", current_directory)
+
 
 agent_num = 5
 collector_env_num = 1
@@ -103,8 +113,6 @@ def train(args):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
-    print(ding.__file__)
-    assert False
     parser.add_argument('--seed', '-s', type=int, default=0)
     args = parser.parse_args()
 
