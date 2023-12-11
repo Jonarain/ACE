@@ -51,6 +51,7 @@ def serial_pipeline(
         env_fn, collector_env_cfg, evaluator_env_cfg = env_setting
     collector_env = create_env_manager(cfg.env.manager, [partial(env_fn, cfg=c) for c in collector_env_cfg])
     evaluator_env = create_env_manager(cfg.env.manager, [partial(env_fn, cfg=c) for c in evaluator_env_cfg])
+    assert False, f"{cfg.seed}"
     collector_env.seed(cfg.seed)
     evaluator_env.seed(cfg.seed, dynamic_seed=False)
     set_pkg_seed(cfg.seed, use_cuda=cfg.policy.cuda)
@@ -58,14 +59,6 @@ def serial_pipeline(
 
     # Create worker components: learner, collector, evaluator, replay buffer, commander.
     path = os.path.join('./{}/log/'.format(cfg.exp_name), 'serial')
-    if not os.path.exists(path):
-        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-        os.makedirs(path)
-        assert False
-    else:
-        print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
-        assert False
-
     tb_logger = SummaryWriter(path)
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
     collector = create_serial_collector(
