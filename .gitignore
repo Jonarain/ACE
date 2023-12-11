@@ -1419,8 +1419,9 @@
 ## eval_config.py
 ## collect_demo_data_config.py
 ## default*
-
-
+.idea/
+**/__pycache__/
+*.pyc
 3rdparty/StarCraftII/*
 3rdparty/StarCraftII_2.4.10/*
 !/3rdparty/StarCraftII/Replays
