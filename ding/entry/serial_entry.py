@@ -62,6 +62,9 @@ def serial_pipeline(
         print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         os.makedirs(path)
         assert False
+    else:
+        print("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy")
+        assert False
 
     tb_logger = SummaryWriter(path)
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
