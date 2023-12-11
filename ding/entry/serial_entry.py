@@ -59,7 +59,9 @@ def serial_pipeline(
     # Create worker components: learner, collector, evaluator, replay buffer, commander.
     path = os.path.join('./{}/log/'.format(cfg.exp_name), 'serial')
     if not os.path.exists(path):
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
         os.makedirs(path)
+        assert False
 
     tb_logger = SummaryWriter(path)
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
