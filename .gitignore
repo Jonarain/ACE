@@ -1419,6 +1419,7 @@
 ## eval_config.py
 ## collect_demo_data_config.py
 ## default*
+__MACOSX/
 .idea/
 **/__pycache__/
 *.pyc
