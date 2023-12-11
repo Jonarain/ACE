@@ -57,8 +57,11 @@ def serial_pipeline(
     policy = create_policy(cfg.policy, model=model, enable_field=['learn', 'collect', 'eval', 'command'])
 
     # Create worker components: learner, collector, evaluator, replay buffer, commander.
-    print(os.path.join('./{}/log/'.format(cfg.exp_name), 'serial'))
-    tb_logger = SummaryWriter(os.path.join('./{}/log/'.format(cfg.exp_name), 'serial'))
+    path = os.path.join('./{}/log/'.format(cfg.exp_name), 'serial')
+    if not os.path.exists(path):
+        os.makedirs(path)
+
+    tb_logger = SummaryWriter(path)
     learner = BaseLearner(cfg.policy.learn.learner, policy.learn_mode, tb_logger, exp_name=cfg.exp_name)
     collector = create_serial_collector(
         cfg.policy.collect.collector,
